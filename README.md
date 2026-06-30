@@ -1,154 +1,439 @@
-# 🌬️ VayuDrishti AI v2.0
-### Urban Air Quality Intelligence Platform
-**ET AI Hackathon 2026 | PS5: AI-Powered Urban Air Quality Intelligence for Smart City Intervention**
+<div align="center">
+
+# 🌬️ VayuDrishti AI
+
+### AI-Powered Urban Air Quality Intelligence for Smart City Intervention
+
+**🏆 ET AI Hackathon 2026 — Problem Statement 5 (PS5)**
+
+*"Predict • Prevent • Protect"*
+
+[![Python](https://img.shields.io/badge/Python-3.11%20%7C%203.12-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.35-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Groq](https://img.shields.io/badge/AI-Groq%20Llama%203.3-10B981)](https://groq.com/)
+[![License](https://img.shields.io/badge/License-MIT-38BDF8)](#-license)
+[![Status](https://img.shields.io/badge/Status-Hackathon%20Ready-22C55E)](#)
+
+</div>
 
 ---
 
-## 🏆 What This Solves
-India's air quality crisis kills **1.67 million people annually** (Lancet, 2024). Despite 900+ CPCB monitoring stations, only 31% of cities have actionable response protocols. VayuDrishti AI bridges this gap — from reactive dashboards to **proactive, evidence-based intervention**.
+## 📌 Problem Overview
+
+Urban air pollution is one of India's biggest public health challenges. Although the Central Pollution Control Board (CPCB) continuously monitors air quality through hundreds of stations, the available information is often limited to dashboards showing only **current AQI values**.
+
+The challenge — **PS5** — is to build an AI-powered decision support platform that goes beyond monitoring and actually:
+
+- Predicts future AQI
+- Identifies pollution sources
+- Generates multilingual health advisories
+- Helps enforcement agencies prioritize inspections
+- Supports smart city planning through AI
 
 ---
 
-## 🤖 Architecture: 6-Agent Multi-AI System
+## 🎯 ET AI Hackathon Problem Statement
 
-```
-CPCB AQI API ──────────┐
-OpenWeatherMap ─────────┼──► Data Engine ──► Source Attribution Agent
-Simulated CAAQMS ───────┘         │               ├── AQI Forecast Agent (24/48/72h + CI)
-                                  │               ├── Health Advisory Agent (4 languages)
-                                  │               ├── Enforcement Agent (routing + briefs)
-                                  │               ├── Smart City Agent (interventions + what-if)
-                                  │               └── Multilingual Agent (SMS/IVR/Push)
-                                  └──► Executive Dashboard → City Admin
-```
-
-| Agent | Role | PS5 Alignment |
-|---|---|---|
-| 📡 AQI Forecast | Weather-aware GB, 24/48/72h + CI | Hyperlocal forecasting |
-| 🔍 Source Attribution | PM ratio, NO₂, SO₂, zone, wind | Source attribution engine |
-| 🏥 Health Advisory | 4 languages, per vulnerable group | Citizen health system |
-| 🚨 Enforcement | Priority ranking, TSP routing | Enforcement intelligence |
-| 🏙️ Smart City | Interventions + what-if simulation | Smart city planning |
-| 🌐 Multilingual | SMS/IVR/Push/WhatsApp per channel | Multi-channel comms |
+PS5 — AI-Powered Urban Air Quality Intelligence for Smart City Intervention
 
 ---
 
-## ✅ PS5 Feature Coverage (100%)
+## 💡 Our Solution
 
-| PS5 Requirement | Implementation |
+**VayuDrishti AI** is a multi-agent AI platform that transforms raw environmental data into actionable intelligence for governments, smart cities, and citizens.
+
+Instead of just displaying AQI numbers, VayuDrishti AI uses AI to:
+
+- 📈 Predict air quality 24–72 hours in advance
+- 🔍 Explain *why* pollution is rising, not just that it is
+- 🏙️ Recommend concrete interventions to city administrators
+- 🗣️ Generate multilingual advisories citizens can actually understand
+- 🚨 Help enforcement teams prioritize where to act first
+- 🔮 Simulate pollution control strategies *before* they're implemented (Digital Twin)
+
+---
+
+## ✨ Key Highlights
+
+- 🤖 6 Specialized AI Agents
+- 📈 24/48/72 Hour AQI Forecasting
+- 🗺 Interactive Pollution Heatmaps
+- 🔍 Pollution Source Attribution
+- 🏥 AI-Generated Multilingual Health Advisories
+- 🌍 Digital Twin What-if Simulation
+- 🚨 Smart Enforcement Planning
+- 📊 Executive Decision Dashboard
+- ☁️ Streamlit Cloud Deployment Ready
+- 🔒 Secure API Key Management
+
+---
+
+## 🎯 Objectives
+
+- Improve public health awareness around air quality
+- Enable proactive, not reactive, pollution control
+- Assist pollution control boards with actionable intelligence
+- Support Smart City and Clean Air Programme initiatives
+- Make AQI data understandable for every citizen, in their own language
+
+---
+
+## 🏛️ Target Users
+
+| User Group | How VayuDrishti AI Helps |
 |---|---|
-| Geospatial Pollution Source Attribution | ✅ Multi-signal confidence scoring + source map |
-| Hyperlocal AQI Forecasting 24-72h | ✅ Gradient Boosting + weather features + CI |
-| Enforcement Intelligence | ✅ Priority scores + TSP routing + AI briefs |
-| Multi-City Comparative Dashboard | ✅ 12-city benchmarking + trend analysis |
-| Citizen Health Advisory (multilingual) | ✅ Telugu / Tamil / Hindi / English |
-| Weather-aware atmospheric modelling | ✅ OpenWeatherMap integration |
-| CAAQMS IoT sensor integration | ✅ CPCB API + realistic fallback |
-| Digital Twin + What-if simulation | ✅ 7 scenarios with gauge visualization |
-| Multi-Agent AI Architecture | ✅ 6 independent specialized agents |
-| Ward-level heatmaps + risk scoring | ✅ Folium heatmap + risk score per station |
-| Inspection route optimization | ✅ Nearest-neighbor TSP routing |
-| Multi-channel advisory dispatch | ✅ SMS / IVR / Push / WhatsApp / Display |
+| 🧑🤝🧑 Citizens | Personalized, multilingual health advisories |
+| 🏢 Pollution Control Boards | Source attribution + enforcement prioritization |
+| 🏙️ Smart City Authorities | Intervention planning + Digital Twin simulation |
+| 🏛️ Municipal Corporations | Executive dashboard + compliance scoring |
+| 🔬 Environmental Researchers | Multi-city benchmarking + historical trends |
+| 🏥 Healthcare Organizations | Vulnerable-group risk matrices |
 
 ---
 
-## 🗂️ Folder Structure
+## 🤖 Multi-Agent AI Architecture
 
 ```
-vayu_drishti_ai/
-├── app.py                     # Main Streamlit app (9 tabs)
-├── requirements.txt
-├── .env.example
-├── README.md
-├── config/
-│   ├── __init__.py
-│   └── constants.py           # Cities, AQI scale, sources, scenarios
-├── agents/
-│   ├── __init__.py
-│   └── agent_system.py        # All 6 AI agents
-├── utils/
-│   ├── __init__.py
-│   ├── data_engine.py         # CPCB, OWM, synthetic data
-│   └── map_builder.py         # Folium map constructors
-└── data/                      # Local cache (auto-created)
-```
-
----
-
-## 🚀 Quick Start (Local)
-
-```bash
-# 1. Clone
-git clone https://github.com/YOUR_USERNAME/vayu-drishti-ai.git
-cd vayu-drishti-ai
-
-# 2. Install
-pip install -r requirements.txt
-
-# 3. Configure API keys
-cp .env.example .env
-# Edit .env with your keys
-
-# 4. Run
-streamlit run app.py
+                    CPCB AQI API
+                         +
+               OpenWeatherMap API
+                         +
+                Historical AQI Data
+                         +
+               Synthetic Fallback Data
+                         │
+                         ▼
+                Data Processing Layer
+              (validated · hardened · cached)
+                         │
+                         ▼
+               AQI Forecasting Model
+            (Gradient Boosting + Weather)
+                         │
+                         ▼
+            ┌─────────────────────────────┐
+            │     AI Multi-Agent System    │
+            ├─────────────────────────────┤
+            │  📡 AQI Forecast Agent        │
+            │  🔍 Source Attribution Agent  │
+            │  🏥 Health Advisory Agent     │
+            │  🚨 Enforcement Agent         │
+            │  🏙️ Smart City Planning Agent │
+            │  🌐 Multilingual Agent        │
+            └─────────────────────────────┘
+                         │
+                         ▼
+               Streamlit Dashboard
+                         │
+                         ▼
+        Interactive Maps · Charts · Executive Views
 ```
 
 ---
 
-## 🔑 API Keys (All Free Tier)
+## 🧠 Detailed Agent Breakdown
 
-| Key | Where to Get | Required? |
-|---|---|---|
-| `GROQ_API_KEY` | [console.groq.com](https://console.groq.com) | For AI alerts/explanations |
-| `OWM_API_KEY` | [openweathermap.org](https://openweathermap.org/api) | For live weather |
-| `CPCB_API_KEY` | [data.gov.in](https://data.gov.in) | For live AQI (realistic fallback if absent) |
+### 📡 AQI Forecast Agent
+Predicts air quality **24 / 48 / 72 hours** ahead using Gradient Boosting trained on historical AQI patterns and live weather features (wind, humidity, temperature, rainfall), with confidence-interval visualization and AI-generated plain-language explanations of *why* the forecast looks the way it does.
 
-> **All features work without API keys** — the app uses realistic simulated data seeded from actual CPCB 2024 patterns.
+### 🔍 Source Attribution Agent
+Estimates the dominant pollution source at each monitoring station using a multi-signal heuristic model (PM2.5/PM10 ratio, NO₂, SO₂, zone type, hour-of-day, wind speed, proximity to highways/industry):
+
+- 🚗 Traffic
+- 🏭 Industrial
+- 🏗️ Construction
+- 🔥 Waste Burning
+- 🌫️ Dust
+- 🌾 Biomass
+
+Each source comes with a confidence score, not just a label.
+
+### 🏥 Health Advisory Agent
+Generates personalized, AI-written health guidance for vulnerable groups:
+
+- Children (0–14)
+- Elderly (60+)
+- Pregnant Women
+- Asthma Patients
+- Outdoor Workers
+- Heart Disease Patients
+
+### 🌐 Multilingual Communication Agent
+Converts every advisory into **English, Telugu, Tamil, and Hindi**, formatted correctly for the channel it's being sent through:
+
+- 📱 Mobile Push
+- 📨 SMS
+- 📻 IVR
+- 💬 WhatsApp
+- 🖥️ Public Displays
+
+### 🚨 Enforcement Agent
+Supports pollution control authorities with:
+
+- Priority-ranked inspection hotspots (Critical / High / Medium / Low)
+- Nearest-neighbor optimized inspection routing
+- AI-generated, evidence-backed enforcement briefs per station
+
+### 🏙️ Smart City Planning Agent
+Recommends concrete city-level interventions — traffic restrictions, construction controls, industrial inspections, school advisories, emergency protocols — and includes a **Digital Twin** what-if simulator to model the AQI impact of an intervention before it's implemented.
 
 ---
 
-## ☁️ Deploy to Streamlit Cloud (Free)
+## 📊 System Workflow
 
-```bash
-# 1. Push to GitHub
-git add . && git commit -m "VayuDrishti AI v2.0" && git push
-
-# 2. Go to share.streamlit.io
-# 3. Connect repo → select app.py
-# 4. Add secrets:
-#    GROQ_API_KEY = "your_key"
-#    OWM_API_KEY  = "your_key"
-# 5. Deploy → get live URL in 60 seconds
-```
+1. **Ingest** — Pull live CPCB AQI + OpenWeatherMap data (or fall back to realistic simulated data if APIs are unavailable)
+2. **Validate** — Every dataframe is schema-checked, missing pollutant columns are auto-filled, NaNs and duplicates are repaired
+3. **Attribute** — Source Attribution Agent scores each station's likely pollution sources
+4. **Forecast** — AQI Forecast Agent projects 24/48/72h ahead with confidence bands
+5. **Advise** — Health Advisory + Multilingual Agents generate citizen-ready alerts
+6. **Enforce** — Enforcement Agent ranks and routes inspection priorities
+7. **Plan** — Smart City Agent recommends interventions and simulates their impact
+8. **Visualize** — Everything renders live across 9 interactive Streamlit dashboard tabs
 
 ---
 
-## 📊 Judging Criteria Coverage
+## ✅ PS5 Feature Coverage
 
-| Criteria | Weight | Features Targeting It |
-|---|---|---|
-| **Innovation** | 25% | Multi-agent, Digital Twin, What-if, Multilingual |
-| **Business Impact** | 25% | Source attribution, Enforcement routing, City interventions, Lives saved metric |
-| **Technical Excellence** | 20% | GB forecast + CI, TSP routing, Attribution engine, CPCB + OWM integration |
-| **Scalability** | 15% | 12-city support, Agent modularity, Streamlit Cloud deploy |
-| **User Experience** | 15% | 9-tab app, KPI cards, Executive dashboard, Mobile-friendly |
+| Requirement | Status |
+|---|:---:|
+| Live AQI Monitoring | ✅ |
+| Hyperlocal AQI Forecasting (24–72h) | ✅ |
+| Geospatial Source Attribution | ✅ |
+| Pollution Heatmaps | ✅ |
+| Smart Enforcement Intelligence | ✅ |
+| Digital Twin / What-If Simulation | ✅ |
+| Multilingual Citizen Advisory | ✅ |
+| Multi-Agent AI Architecture | ✅ |
+| Weather-Aware Modelling | ✅ |
+| Multi-City Comparative Dashboard | ✅ |
+| Executive / Compliance Dashboard | ✅ |
+| Production-Hardened Data Pipeline | ✅ |
 
 ---
 
+## 🚀 Features
+
+<table>
+<tr>
+<td valign="top" width="50%">
+
+**📊 Live Dashboard**
+- Real-time AQI, weather & KPI cards
+- City-level risk scoring
+- Six-agent status panel
+
+**🗺️ Interactive Maps**
+- AQI station markers
+- Pollution heatmaps
+- Source attribution overlay
+- Optimized inspection routes
+
+**📈 AI Forecast**
+- 24h / 48h / 72h horizons
+- Confidence interval bands
+- AI-generated explanations
+
+</td>
+<td valign="top" width="50%">
+
+**🏥 Health Advisories**
+- AI-generated, per vulnerable group
+- 4-language support
+- Risk matrix visualization
+
+**🌍 Digital Twin**
+- Traffic reduction scenarios
+- Construction bans
+- Industrial shutdowns
+- Rainfall washout effects
+- Combined intervention modeling
+
+**📊 Executive Dashboard**
+- Multi-city benchmarking
+- Compliance scoring
+- Trend & heatmap analytics
+
+</td>
+</tr>
+</table>
+
+---
+
+## 📸 Screenshots
+
+🌬️ VayuDrishti AI — Predict • Prevent • Protect
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** Streamlit 1.35 + custom CSS
-- **Maps:** Folium + streamlit-folium (station, heatmap, source, route maps)
-- **ML:** scikit-learn GradientBoostingRegressor + weather features + confidence intervals
-- **AI:** Groq Llama 3.3 70B (6 specialized agent prompts)
-- **Data:** CPCB data.gov.in API + OpenWeatherMap API + realistic CPCB-pattern fallback
-- **Charts:** Plotly Express + Graph Objects
-- **Deploy:** Streamlit Community Cloud (free)
+| Layer | Technology |
+|---|---|
+| **Frontend** | Streamlit |
+| **Backend** | Python 3.11 / 3.12 |
+| **Machine Learning** | Scikit-learn (Gradient Boosting) |
+| **Generative AI** | Groq — Llama 3.3 70B |
+| **Maps** | Folium + OpenStreetMap |
+| **Charts** | Plotly |
+| **APIs** | CPCB (data.gov.in) · OpenWeatherMap · Groq |
 
 ---
 
+## 📂 Project Structure
 
-ET AI Hackathon 2026 — PS5: Urban Air Quality Intelligence
+```
+vayu_drishti_ai/
+│
+├── app.py                     # Main Streamlit application (9-tab dashboard)
+├── requirements.txt           # Pinned dependencies
+├── README.md                  # You are here
+├── .env.example                # API key template
+│
+├── config/
+│   └── constants.py           # Cities, AQI scale, pollution sources, scenarios
+│
+├── agents/
+│   └── agent_system.py        # All 6 AI agents (Forecast, Attribution, Health,
+│                               #  Enforcement, Smart City, Multilingual)
+│
+├── utils/
+│   ├── data_engine.py         # CPCB + OpenWeatherMap + synthetic fallback
+│   ├── map_builder.py         # Folium map constructors
+│   └── helpers.py             # Defensive helpers (safe_mean, ensure_pollutants,
+│                               #  validate_df, safe_chart, status_badge, etc.)
+│
+├── pages/                     # (reserved for future multi-page expansion)
+├── assets/                    # (reserved for branding/static assets)
+└── data/                      # (local cache, auto-created at runtime)
+```
+
+---
+
+## 🔑 API Configuration
+
+| API | Purpose | Required? |
+|---|---|:---:|
+| **Groq** | Powers all 6 AI agents (forecast explanations, health advisories, enforcement briefs, intervention plans) | Optional |
+| **OpenWeatherMap** | Live temperature, humidity, wind, rainfall | Optional |
+| **CPCB / data.gov.in** | Live AQI station readings | Optional |
+
+> 🛡️ **The application never crashes without API keys.** Every service automatically falls back to realistic, CPCB-pattern-seeded simulated data — the full dashboard remains fully functional and demo-ready at all times.
+
+API keys are entered as **password fields only** in the sidebar, are never logged or printed, and are displayed only as a green **"Connected"** status badge — the actual key value is never shown anywhere in the UI.
+
+---
+
+## ⚙️ Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/YOUR_USERNAME/VayuDrishti-AI.git
+cd VayuDrishti-AI
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Configure API keys (optional — app works without these)
+cp .env.example .env
+# Edit .env and add your keys
+
+# 4. Run the app
+streamlit run app.py
+```
+
+The dashboard will open automatically at `http://localhost:8501`.
+
+---
+
+## ☁️ Streamlit Cloud Deployment
+
+```bash
+# 1. Push this repository to GitHub
+git add .
+git commit -m "VayuDrishti AI v2.0 — ET AI Hackathon 2026"
+git push origin main
+
+# 2. Go to share.streamlit.io
+# 3. Click "New app" → connect this repository → select app.py as the entry point
+# 4. Under App Settings → Secrets, add:
+GROQ_API_KEY = "your_groq_key"
+OWM_API_KEY  = "your_openweathermap_key"
+CPCB_API_KEY = "your_cpcb_key"
+
+# 5. Deploy — live URL is ready within ~60 seconds
+```
+
+---
+
+## 🎬 Demo Walkthrough
+
+| Step | Tab | What to Show |
+|---|---|---|
+| 1 | 🗺️ Live Map | Toggle AQI / heatmap / source layers, click a station popup |
+| 2 | 📈 AI Forecast | 72h forecast with confidence band, click AI explanation |
+| 3 | 🔍 Source Attribution | Donut chart of pollution sources for a selected station |
+| 4 | 🏥 Health Advisories | Generate a Telugu/Tamil advisory for "Children" |
+| 5 | 🚨 Enforcement | Priority cards + optimized inspection route map |
+| 6 | 🏙️ Smart City | AI-generated intervention plan for current AQI |
+| 7 | 🔮 Digital Twin | Run "All Interventions" scenario, view before/after gauges |
+| 8 | 📊 Executive | Compliance score, multi-city benchmarking table |
+| 9 | 🤖 Agents | Architecture diagram + PS5 feature coverage checklist |
+
+---
+
+## 📊 Judging Criteria Mapping
+
+| Criteria | Weight | How VayuDrishti AI Delivers |
+|---|:---:|---|
+| **Innovation** | 25% | 6-agent architecture, Digital Twin what-if simulation, weather-aware ML forecasting |
+| **Business Impact** | 25% | Source attribution → targeted enforcement, intervention plans with measurable lives-protected estimates |
+| **Technical Excellence** | 20% | Gradient Boosting + confidence intervals, TSP-optimized routing, production-hardened data pipeline |
+| **Scalability** | 15% | 12-city architecture out of the box, modular agent design, one-click Streamlit Cloud deploy |
+| **User Experience** | 15% | 9-tab interactive dashboard, multilingual advisories, zero-crash failsafe design |
+
+---
+
+## 🌟 Future Scope
+
+- 🛰️ Satellite imagery integration (Sentinel, MODIS) for source verification
+- 📟 Live IoT/CAAQMS sensor network integration
+- 📱 Dedicated citizen mobile app
+- 💬 WhatsApp Business API chatbot for instant AQI queries
+- 🚁 Drone-based hotspot verification for enforcement teams
+- 🧠 Deep learning (LSTM/Transformer) forecasting upgrade
+
+---
+
+## 👥 Team Shakti2
+
+| Name | Role |
+|---|---|
+| **Nanda Gunasri** | Developer |
+| **Jinkala Sunitha** | Developer |
+
+**Institution:** Mohan Babu University  
+**Department:** B.Tech Computer Science Engineering  
+
+---
+
+## 🏆 ET AI Hackathon 2026
+
+**Problem Statement 5 — AI-Powered Urban Air Quality Intelligence for Smart City Intervention**
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+---
+
+<div align="center">
+
+### ⭐ VayuDrishti AI — Predict • Prevent • Protect
+
+*Built by Team Shakti2 for ET AI Hackathon 2026*
+
+If this project helped you, consider giving it a ⭐ on GitHub!
+
+</div>
