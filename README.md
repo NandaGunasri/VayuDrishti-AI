@@ -261,7 +261,10 @@ Recommends concrete city-level interventions — traffic restrictions, construct
 
 ## 📸 Screenshots
 
-🌬️ VayuDrishti AI — Predict • Prevent • Protect
+<div align="center">
+  <img src="assets/screenshot.png" alt="VayuDrishti AI Live Dashboard" width="100%">
+  <p><i>VayuDrishti AI Live Dashboard Overview</i></p>
+</div>
 
 ---
 
