@@ -1,0 +1,29 @@
+# Secrets & Env files
+.env
+.env.local
+.env.*
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Python caching & artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.ipynb_checkpoints/
+*.log
+
+# IDEs and editors
+.vscode/
+.idea/
+
+# Environments
+.venv/
+venv/
+ENV/
+env/
+
+# OS specific files
+.DS_Store
+Thumbs.db
